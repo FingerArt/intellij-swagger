@@ -158,4 +158,18 @@ public class MainPathResolver implements PathResolver {
         return hasPath(psiElement, "$.paths.*.*.responses.*.headers.*.collectionFormat");
     }
 
+    @Override
+    public boolean childOfServer(PsiElement psiElement) {
+        return hasPath(psiElement, "$.servers");
+    }
+
+    @Override
+    public boolean childOfServerVariable(PsiElement psiElement) {
+        return hasPath(psiElement, "$.servers.variables.*");
+    }
+
+    @Override
+    public boolean childOfComponent(PsiElement psiElement) {
+        return hasPath(psiElement, "$.components");
+    }
 }

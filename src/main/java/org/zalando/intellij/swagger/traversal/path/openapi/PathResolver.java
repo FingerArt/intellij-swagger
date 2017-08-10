@@ -82,4 +82,16 @@ public interface PathResolver {
     default boolean hasPath(final PsiElement psiElement, final String pathExpression) {
         return new Path(psiElement, pathExpression).exists();
     }
+
+    default boolean childOfServer(PsiElement psiElement) {
+        return false;
+    }
+
+    default boolean childOfServerVariable(PsiElement psiElement) {
+        return false;
+    }
+
+    default boolean childOfComponent(PsiElement psiElement) {
+        return false;
+    }
 }
